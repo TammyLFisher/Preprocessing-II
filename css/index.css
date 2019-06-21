@@ -178,17 +178,34 @@ header div {
   margin: 0 auto;
   width: 80%;
   max-width: 800px;
-  border: 1px solid red;
 }
 header div nav {
   width: 40%;
   display: flex;
   justify-content: space-between;
 }
+@media only screen and (max-width: 500px) {
+  header div nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
 header div nav a {
   color: black;
   text-decoration: none;
   font-size: 1.6rem;
+}
+header div nav a:hover {
+  color: #17A2B8;
+  text-decoration: underline;
+  cursor: pointer;
+}
+@media only screen and (max-width: 500px) {
+  header div nav a:hover {
+    color: purple;
+    background-color: #FFEBCD;
+  }
 }
 .footer {
   width: 100%;
@@ -201,26 +218,26 @@ header div nav a {
   font-size: 1.6rem;
   padding: 20px;
 }
-body {
+.home body {
   width: 80%;
   height: 100%;
   margin: 0 auto;
 }
-.home .content {
+.home .content-section {
   margin: 30px 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.home .content .text-content {
+.home .content-section .text-content {
   width: 48%;
   padding-right: 1%;
 }
-.home .content .img-content {
+.home .content-section .img-content {
   width: 48%;
   padding-left: 1%;
 }
-.home .content .img-content img {
+.home .content-section .img-content img {
   border-radius: 10px;
 }
 .home .inverse-content {
@@ -263,4 +280,44 @@ body {
   margin-bottom: 10rem;
   vertical-align: center;
   border-bottom: 2px #C0C0C0 dashed;
+}
+button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 80%;
+  height: 4rem;
+  color: #212529;
+  background-color: #17A2B8;
+  border: none;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  border-radius: 10px;
+  padding-top: 1rem;
+  position: relative;
+}
+button:hover {
+  background: #FFEBCD;
+  cursor: pointer;
+}
+button:after {
+  content: "";
+  background: #90EE90;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s;
+}
+button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s;
 }
