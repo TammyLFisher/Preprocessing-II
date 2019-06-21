@@ -171,7 +171,7 @@ img {
 header {
   border-bottom: 2px #C0C0C0 dashed;
 }
-header div {
+div {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
@@ -179,30 +179,44 @@ header div {
   width: 80%;
   max-width: 800px;
 }
-header div nav {
+@media only screen and (max-width: 500px) {
+  div {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 80%;
+    padding-bottom: 1rem;
+  }
+}
+div nav {
   width: 40%;
   display: flex;
   justify-content: space-between;
 }
 @media only screen and (max-width: 500px) {
-  header div nav {
-    display: flex;
-    flex-direction: column;
+  div nav {
+    align-content: center;
     width: 100%;
   }
+  div nav :first-child {
+    margin-left: 1rem;
+  }
+  div nav :last-child {
+    margin-right: 1rem;
+  }
 }
-header div nav a {
+div nav a {
   color: black;
   text-decoration: none;
   font-size: 1.6rem;
 }
-header div nav a:hover {
+div nav a:hover {
   color: #17A2B8;
   text-decoration: underline;
   cursor: pointer;
 }
 @media only screen and (max-width: 500px) {
-  header div nav a:hover {
+  div nav a:hover {
     color: purple;
     background-color: #FFEBCD;
   }
@@ -218,58 +232,107 @@ header div nav a:hover {
   font-size: 1.6rem;
   padding: 20px;
 }
-.home body {
+@media only screen and (max-width: 500px) {
+  .home .logo {
+    align-self: center;
+    padding-left: 2rem;
+    font-size: 2rem;
+  }
+}
+body {
   width: 80%;
   height: 100%;
   margin: 0 auto;
+  border-bottom: 2px #C0C0C0 dashed;
 }
-.home .content-section {
+@media only screen and (max-width: 500px) {
+  body {
+    margin: 1rem;
+  }
+}
+body .content-section {
   margin: 30px 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.home .content-section .text-content {
+@media only screen and (max-width: 500px) {
+  body .content-section {
+    align-content: center;
+  }
+}
+body .content-section .text-content {
   width: 48%;
   padding-right: 1%;
 }
-.home .content-section .img-content {
+@media only screen and (max-width: 500px) {
+  body .content-section .text-content {
+    width: 90%;
+  }
+}
+body .content-section .img-content {
   width: 48%;
   padding-left: 1%;
 }
-.home .content-section .img-content img {
+@media only screen and (max-width: 500px) {
+  body .content-section .img-content {
+    width: 100%;
+  }
+}
+body .content-section .img-content img {
   border-radius: 10px;
 }
-.home .inverse-content {
+body .inverse-content {
   padding-bottom: 30px;
   border-bottom: 2px dashed #C0C0C0;
 }
-.home .inverse-content .text-content {
+@media only screen and (max-width: 500px) {
+  body .inverse-content {
+    width: 100%;
+    flex-direction: column-reverse;
+  }
+}
+body .inverse-content .text-content {
   padding-left: 1%;
   padding-right: 0;
 }
-.home .inverse-content .img-content {
+body .inverse-content .img-content {
   padding-right: 1%;
   padding-left: 0;
 }
-.home .content-destination {
+body .content-destination {
   width: 75%;
   margin: 0 auto 30px;
 }
-.home .content-destination img {
+@media only screen and (max-width: 500px) {
+  body .content-destination {
+    width: 90%;
+  }
+}
+body .content-destination img {
   border-radius: 10px;
 }
-.home .content-pick {
+body .content-pick {
   padding-top: 30px;
   border-top: 2px dashed #C0C0C0;
   display: flex;
   justify-content: space-between;
 }
-.home .content-pick .destination {
+@media only screen and (max-width: 500px) {
+  body .content-pick {
+    flex-direction: column;
+  }
+}
+body .content-pick .destination {
   width: 30%;
   margin-bottom: 30px;
 }
-.header {
+@media only screen and (max-width: 500px) {
+  body .content-pick .destination {
+    width: 90%;
+  }
+}
+body .header {
   max-width: 80%;
   display: flex;
   flex-wrap: row top;
@@ -290,8 +353,7 @@ button {
   color: #212529;
   background-color: #17A2B8;
   border: none;
-  padding: 20px;
-  width: 200px;
+  padding: 2rem;
   text-align: center;
   transition-duration: 0.4s;
   text-decoration: none;
@@ -299,6 +361,11 @@ button {
   border-radius: 10px;
   padding-top: 1rem;
   position: relative;
+}
+@media only screen and (max-width: 500px) {
+  button {
+    width: 100%;
+  }
 }
 button:hover {
   background: #FFEBCD;

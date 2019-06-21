@@ -1,6 +1,8 @@
 // Navigation Styles here
 header {
     .border-bottom();
+      
+    }
     div {
         display: flex;
         align-items: baseline;
@@ -8,15 +10,29 @@ header {
         margin: 0 auto;
         width: 80%;
         max-width: 800px;
+        @media only screen and (max-width: 500px){
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            width: 80%;
+            padding-bottom: 1rem;
+        
+        }
         nav {
             width: 40%;
             display: flex;
             justify-content: space-between;
             @media only screen and (max-width: 500px){
-                display: flex;
-                flex-direction: column;
+               align-content: center;
                 width: 100%;
+                :first-child{
+                    margin-left: 1rem;
+                }
+                :last-child{
+                    margin-right: 1rem;
+                }
             }
+
             
                 a {
             color: black;
@@ -29,9 +45,9 @@ header {
                 cursor: pointer;
                 @media only screen and (max-width: 500px) {
                 color: purple;
-                background-color:@sandy-beach
+                background-color:@sandy-beach;
+                
             }
         }
     }
-}
 }
